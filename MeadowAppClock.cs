@@ -20,7 +20,7 @@ namespace MeadowClockGraphics
 
         St7789 st7789;
         GraphicsLibrary graphics;
-        int hour, minute, second, tick;
+        int hour, minute, tick;
 
         public MeadowAppClock()
         {

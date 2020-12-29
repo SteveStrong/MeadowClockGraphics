@@ -11,7 +11,7 @@ namespace MeadowClockGraphics
             if (args.Length > 0 && args[0] == "--exitOnDebug") return;
 
             // instantiate and run new meadow app
-            app = new MeadowAppClock();
+            app = new MeadowAppLights();
 
             Thread.Sleep(Timeout.Infinite);
         }

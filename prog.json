@@ -1,0 +1,171 @@
+{
+
+  "steps": {
+    "0": [
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 0,
+          "groupId": 1
+        }
+      },
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 0,
+          "groupId": 2
+        }
+      },
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 0,
+          "groupId": 3
+        }
+      },
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 0,
+          "groupId": 4
+        }
+      },
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 0,
+          "groupId": 5
+        }
+      },
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 0,
+          "groupId": 6
+        }
+      },
+      {
+        "op": "ON",
+        "data": {
+          "Id": 0,
+          "name": "E0",
+          "groupId": 1,
+          "color": "#FF5733"
+        }
+      }
+    ],
+    "10": [
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 10,
+          "name": "E0",
+          "groupId": 1,
+          "color": "#FF5733"
+        }
+      },
+      {
+        "op": "ON",
+        "data": {
+          "Id": 10,
+          "name": "E1",
+          "groupId": 1,
+          "color": "#54C82B"
+        }
+      }
+    ],
+    "40": [
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 40,
+          "name": "E1",
+          "groupId": 1,
+          "color": "#54C82B"
+        }
+      },
+      {
+        "op": "ON",
+        "data": {
+          "Id": 40,
+          "name": "E2",
+          "groupId": 1,
+          "color": "#2B7CC8"
+        }
+      },
+      {
+        "op": "ON",
+        "data": {
+          "Id": 40,
+          "name": "E3",
+          "groupId": 2,
+          "color": "#7FEE10"
+        }
+      },
+      {
+        "op": "ON",
+        "data": {
+          "Id": 40,
+          "name": "E4",
+          "groupId": 3,
+          "color": "#10CFEE"
+        }
+      }
+    ],
+    "50": [
+      {
+        "op": "ON",
+        "data": {
+          "Id": 50,
+          "name": "E5",
+          "groupId": 4,
+          "color": "#B72BC8"
+        }
+      }
+    ],
+    "85": [
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 85,
+          "name": "E2",
+          "groupId": 1,
+          "color": "#2B7CC8"
+        }
+      }
+    ],
+    "90": [
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 90,
+          "name": "E3",
+          "groupId": 2,
+          "color": "#7FEE10"
+        }
+      }
+    ],
+    "92": [
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 92,
+          "name": "E4",
+          "groupId": 3,
+          "color": "#10CFEE"
+        }
+      }
+    ],
+    "105": [
+      {
+        "op": "OFF",
+        "data": {
+          "Id": 105,
+          "name": "E5",
+          "groupId": 4,
+          "color": "#B72BC8"
+        }
+      }
+    ]
+  }
+}
