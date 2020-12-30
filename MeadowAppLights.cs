@@ -29,10 +29,14 @@ namespace MeadowClockGraphics
         }
     }
 
+
     public class MeadowAppLights : App<F7Micro, MeadowAppTest>
     {
         St7789 st7789;
         GraphicsLibrary graphics;
+
+        
+        ConfigModel myConfig;
 
         public MeadowAppLights()
         {
@@ -50,6 +54,9 @@ namespace MeadowClockGraphics
                 height: 240
             );
 
+            Initialize();
+
+            Console.WriteLine( $"{myConfig.SettingA} {myConfig.SettingB}");
             //var raw = LoadJson();
             //Console.WriteLine(raw);
 
@@ -65,6 +72,16 @@ namespace MeadowClockGraphics
 
         }
 
+
+        void Initialize()
+        {
+            Console.WriteLine("Initialize hardware...");
+
+            // Load Config
+            var json = File.ReadAllText("/meadow0/config.json");
+            myConfig = JsonSerializer.Deserialize<ConfigModel>(json);
+
+        }
         public string LoadJson()
         {
             using (var reader = new StreamReader("meadow0/prog.json"))
