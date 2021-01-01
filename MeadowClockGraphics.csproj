@@ -5,19 +5,26 @@
     <AssemblyName>App</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Meadow.Foundation" Version="0.*" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Meadow.Foundation.Displays.TftSpi" Version="0.7.23" />
-    <PackageReference Include="System.Text.Json" Version="5.0.0" />  </ItemGroup>
-  <ItemGroup>
-    <Content Include="prog.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Remove="config.json" />
+    <None Remove="prog.json" />
+    <None Remove="proglist.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="prog.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="proglist.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Meadow.Foundation" Version="0.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Meadow.Foundation.Displays.TftSpi" Version="0.7.23" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />  
+    </ItemGroup>
 </Project>

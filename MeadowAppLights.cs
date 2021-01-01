@@ -4,7 +4,7 @@ using Meadow.Foundation;
 using Meadow.Foundation.Displays.Tft;
 using Meadow.Foundation.Graphics;
 using Meadow.Hardware;
-using Newtonsoft.Json;
+using System.Text.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -94,7 +94,7 @@ namespace MeadowClockGraphics
 
         public ProgramManager Manager()
         {
-            const manager = new ProgramManager();
+            var manager = new ProgramManager();
             return manager;
         }
 

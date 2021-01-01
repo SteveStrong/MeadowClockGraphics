@@ -10,13 +10,13 @@ namespace MeadowClockGraphics
 
     public enum Operation
     {
-        ON = 'ON',
-        OFF = 'OFF',
-        RUN = 'RUN',
-        STOP = 'STOP',
-        SHOW = 'SHOW',
-        HIDE = 'HIDE',
-        EXECUTE = 'EXE'
+        ON,
+        OFF,
+        RUN,
+        STOP,
+        SHOW,
+        HIDE,
+        EXECUTE
     }
 
     public class LightLED
@@ -51,7 +51,7 @@ namespace MeadowClockGraphics
     {
         private readonly Dictionary<int, List<Instruction>> steps = new Dictionary<int, List<Instruction>>();
 
-        public Algorithm addStep(int id, Instruction obj) :  {
+        public Algorithm addStep(int id, Instruction obj) {
 
             if ( steps.ContainsKey(id) ) {
                 steps[id] = new List<Instruction>();
@@ -60,7 +60,7 @@ namespace MeadowClockGraphics
             return this;
         }
 
-        public List<Instruction> getStep(int id) :  {
+        public List<Instruction> getStep(int id) {
             return steps[id];
         }
     }
@@ -69,11 +69,11 @@ namespace MeadowClockGraphics
     {
         Algorithm program = new Algorithm();
 
-        public Algorithm addStep(int id, Instruction obj) :  {
+        public Algorithm addStep(int id, Instruction obj) {
             return program.addStep(id, obj);
         }
 
-        public List<Instruction> getStep(int id) :  {
+        public List<Instruction> getStep(int id) {
             return program.getStep(id);
         }
     }
