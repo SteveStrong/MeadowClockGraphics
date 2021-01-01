@@ -36,7 +36,7 @@ namespace MeadowClockGraphics
         GraphicsLibrary graphics;
 
         
-        ConfigModel myConfig;
+
 
         public MeadowAppLights()
         {
@@ -54,11 +54,10 @@ namespace MeadowClockGraphics
                 height: 240
             );
 
-            Initialize();
+            ReadConfig();
 
-            Console.WriteLine( $"{myConfig.SettingA} {myConfig.SettingB}");
-            //var raw = LoadJson();
-            //Console.WriteLine(raw);
+            ReadProg1();
+
 
 
             graphics = new GraphicsLibrary(st7789);
@@ -73,23 +72,25 @@ namespace MeadowClockGraphics
         }
 
 
-        void Initialize()
+        void ReadConfig()
         {
-            Console.WriteLine("Initialize hardware...");
+            Console.WriteLine("read config...");
 
             // Load Config
             var json = File.ReadAllText("/meadow0/config.json");
-            myConfig = JsonSerializer.Deserialize<ConfigModel>(json);
-
+            ConfigModel myConfig = JsonSerializer.Deserialize<ConfigModel>(json);
+            Console.WriteLine($"{myConfig.SettingA} {myConfig.SettingB}");
+            Console.WriteLine("read complete...");
         }
-        public string LoadJson()
+
+        void ReadProg1()
         {
-            using (var reader = new StreamReader("meadow0/prog.json"))
-            {
-                string json = reader.ReadToEnd();
-                //dynamic source = JsonConvert.DeserializeObject(json);
-                return json;
-             }
+            Console.WriteLine("ReadProg...");
+            var json = File.ReadAllText("/meadow0/proglist.json");
+            var model = JsonSerializer.Deserialize<List<ProgStep>>(json);
+            Console.WriteLine($"Count {model.Count}");
+            Console.WriteLine($"list {model}");
+            Console.WriteLine("ReadProg in done...");
         }
 
         public ProgramManager Manager()
