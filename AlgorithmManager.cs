@@ -21,12 +21,12 @@ namespace MeadowClockGraphics
 
     public class LightLED
     {
-        int Id { get; set; }
-        int groupId { get; set; }
-        string name { get; set; }
-        Color color { get; set; }
+        public int Id { get; set; }
+        public int groupId { get; set; }
+        public string name { get; set; }
+        public Color color { get; set; }
 
-        LightLED(int Id, int groupId, Color color)
+        public LightLED(int Id, int groupId, Color color)
         {
             this.Id = Id;
             this.groupId = groupId;
@@ -36,13 +36,13 @@ namespace MeadowClockGraphics
 
     public class Instruction
     {
-        Operation op { get; set; }
-        LightLED data { get; set; }
+        public Operation op { get; set; }
+        public LightLED led { get; set; }
 
-        Instruction(Operation op, LightLED data)
+        public Instruction(Operation op, LightLED led)
         {
             this.op = op;
-            this.data = data;
+            this.led = led;
         }
     }
 
@@ -53,7 +53,7 @@ namespace MeadowClockGraphics
 
         public Algorithm addStep(int id, Instruction obj) {
 
-            if ( steps.ContainsKey(id) ) {
+            if ( !steps.ContainsKey(id) ) {
                 steps[id] = new List<Instruction>();
             }
             steps[id].Add(obj);
@@ -65,7 +65,7 @@ namespace MeadowClockGraphics
         }
     }
 
-    public class ProgramManager
+    public class AlgorithmManager
     {
         Algorithm program = new Algorithm();
 

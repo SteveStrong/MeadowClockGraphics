@@ -85,17 +85,24 @@ namespace MeadowClockGraphics
 
         void ReadProg1()
         {
+            var manager = this.Manager();
+
             Console.WriteLine("ReadProg...");
             var json = File.ReadAllText("/meadow0/proglist.json");
             var model = JsonSerializer.Deserialize<List<ProgStep>>(json);
             Console.WriteLine($"Count {model.Count}");
-            Console.WriteLine($"list {model}");
+            model.ForEach(item =>
+           {
+               var led = new LightLED(item.data.Id, item.data.groupId, Color.Coral);
+               manager.addStep(item.seq, new Instruction(Operation.OFF, led));
+               Console.WriteLine($"id {led.Id}  groupId {led.groupId}");
+           });
             Console.WriteLine("ReadProg in done...");
         }
 
-        public ProgramManager Manager()
+        public AlgorithmManager Manager()
         {
-            var manager = new ProgramManager();
+            var manager = new AlgorithmManager();
             return manager;
         }
 
